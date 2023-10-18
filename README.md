@@ -21,5 +21,5 @@ Follow the below commands
 
 ## Sources
 
-- [Playwright] (https://playwright.dev/docs/intro)
+- [Playwright](https://playwright.dev/docs/intro)
 - [Cucumber](https://cucumber.io/docs/cucumber/)
