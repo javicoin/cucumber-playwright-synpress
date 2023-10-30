@@ -6,6 +6,10 @@ class DemoPage {
 		return page.locator('[id="btn-core-connect-wallet"]');
 	}
 
+	get btnConnectMetamask() {
+		return page.locator('.wallet-button-styling .svelte-1vlog3j').first();
+	}
+
 	get linkRollupExplorer() {
 		return page.locator('.footer-link');
 	}
@@ -16,6 +20,7 @@ class DemoPage {
 
 	async connectWallet(){
 		await this.btnConnectWallet.click();
+		await this.btnConnectMetamask.click();
 	}
 
 	async navigateToRollupExplorer() {

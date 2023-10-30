@@ -40,10 +40,19 @@ async function metamaskConfig() {
     // wait for metamask
     await context.pages()[0].waitForTimeout(3000);
 
+    // Custom Network
+    const networkConfiguration = {
+      networkName: 'Rootstock',
+      rpcUrl: 'https://public-node.testnet.rsk.co',
+      chainId: '31',
+      symbol: 'RBTC',
+      isTestnet: true
+    }
+
     // setup metamask
     await initialSetup(chromium, {
       secretWordsOrPrivateKey: global.SECRET,
-      network: global.NETWORK,
+      network: networkConfiguration,
       password: global.PASSWORD,
       enableAdvancedSettings: true,
     });
