@@ -7,16 +7,20 @@ Follow the below commands
 
 - Install dependencies `npm i`
 
+- Create a `.env` file inside `config` containing MetaMask configutarion. Example:
+```
+secretWordsOrPrivateKey=test test test test test test test test test test test junk
+network=optimism
+password=Tester@1234
+```
+
 - Execute `test` or `npm test` script to run the tests using chromium
 
 - Generated reports located at "test-results" folder
 
 ## Next steps short term
-- PageObject pattern
-- Hooks
-- Multi browser support
+- Synpress - ongoing
 - Playwright wrappers & helpers
-- Synpress
 - XRay integration
 
 ## Sources

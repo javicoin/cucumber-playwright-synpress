@@ -1,29 +1,27 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-import { chromium, expect } from "@playwright/test";
+//import { expect } from "../../hooks/fixtures.js";
+import metamask from "@synthetixio/synpress/commands/metamask.js";
+import DemoPage from "../../pages/demo.page.js"
 
-let browser;
-let context;
-let page;
-let newPage;
-
-Given(/^I open IOV website$/, async function () {
-	browser = await chromium.launch({ headless: false  });
-	context = await browser.newContext();
-	page = await context.newPage();
-	await page.goto("https://www.iovlabs.org/");
-	
+Given(/^I open Dapp website$/, async function () {
+	await DemoPage.navigateToDapp(global.BASE_URL);
 });
 
-When(/^I navigate to open positions$/, async function () {
-	await page.locator("a[href='careers']").click();
-	const pagePromise = context.waitForEvent('page');
-	await page.locator("a[href='https://jobs.lever.co/iovlabs']").click();
-	newPage = await pagePromise;
-	await newPage.waitForLoadState();
+When(/^I navigate to Rollup Explorer$/, async function () {
+	await DemoPage.navigateToRollupExplorer();
 });
 
-Then(/^I verify the job openings are displayed$/, async function () {
-	const title = await newPage.title();
-    await expect(title).toEqual("IOVLabs");
-	await browser.close();
+Then(/^I validate Rollup Explorer opens$/, async function () {
+	await DemoPage.validateExplorer();
+});
+
+Then(/^I connect metamask$/, async function () {
+	await DemoPage.connectWallet();
+	await metamask.getExtensionDetails();
+	// await metamask.goToHome();
+	// await metamask.disconnectWalletFromAllDapps();
+	// await metamask.importAccount(
+	// 	"0xdbda1821b80551c9d65939329250298aa3472ba22feea921c0cf5d620ea67b97"
+	//   );
+	// await page.click("#connectButton");
 });
