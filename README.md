@@ -1,15 +1,15 @@
-Run native automation for web using cucumber-playwright in Javascript.
+Run native automation for web using cucumber-playwright-synpress in Javascript.
 
 ## Running tests & Reports
 
 Follow the below commands 
-- Clone the project - `https://github.com/javicoin/cucumber-playwright-js`.
+- Clone the project - `https://github.com/javicoin/cucumber-playwright-synpress`.
 
 - Install dependencies `npm i`
 
 - Create a `.env` file inside `config` containing MetaMask configutarion. Example:
 ```
-secretWordsOrPrivateKey=test test test test test test test test test test test junk
+secretWordsOrPrivateKey=test test test test test test test test test test test test
 network=optimism
 password=Tester@1234
 ```
@@ -19,7 +19,6 @@ password=Tester@1234
 - Generated reports located at "test-results" folder
 
 ## Next steps short term
-- Synpress - ongoing
 - Playwright wrappers & helpers
 - XRay integration
 
@@ -27,3 +26,4 @@ password=Tester@1234
 
 - [Playwright](https://playwright.dev/docs/intro)
 - [Cucumber](https://cucumber.io/docs/cucumber/)
+- [Synpress](https://github.com/synpress-io/synpress-examples)
