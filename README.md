@@ -1,4 +1,4 @@
-Run native automation for web using cucumber-playwright-synpress in Javascript.
+Run native automation for dApps using cucumber-playwright-synpress in Javascript.
 
 ## Running tests & Reports
 
